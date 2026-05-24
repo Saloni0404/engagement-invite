@@ -121,7 +121,7 @@ const toggleMusic = () => {
         <div className="person-block">
         <h2 className="couple-name">Saloni</h2>
         <p className="family-label">
-          Daughter of
+          (Daughter of)
          </p>
         <p className="family-name">
           Jayshree & Rajendra Burad
@@ -130,7 +130,7 @@ const toggleMusic = () => {
       <div className="person-block">
         <h2 className="couple-name">Shrenik</h2>
         <p className="family-label">
-          Son of
+          (Son of)
         </p>
         <p className="family-name">
           Shailaja & Sanjay Changede
