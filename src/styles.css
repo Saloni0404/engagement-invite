@@ -85,10 +85,7 @@ html{
     flex-direction:column;
     align-items:center;
     gap:18px}
-.closing-title{font-family:'Great Vibes',cursive;
-  font-size:clamp(2.1rem,4.5vw,3.8rem);
-  margin:8px 0 0
-}
+
 .stack-card{width:min(820px,100%);
     background:rgba(255,255,255,.52);
     border:1px solid rgba(201,154,55,.35);
@@ -113,7 +110,7 @@ html{
 .contact-line{text-decoration:none;color:var(--maroon);display:flex;
     flex-direction:column;gap:4px;padding:12px;border-left:1px solid rgba(201,154,55,.45)}
 .contact-line:nth-of-type(1){border-left:0}
-.final-line{font-family:'Great Vibes',cursive;font-size:clamp(2.1rem,4.5vw,3.8rem);margin:8px 0 0}
+./*final-line{font-family:'Great Vibes',cursive;font-size:clamp(2.1rem,4.5vw,3.8rem);margin:8px 0 0}*/
 .fade-up{animation:fadeUp .8s ease-out both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
@@ -306,10 +303,7 @@ html{
   .contact-line{
     padding: 16px 10px;
   }
-  .final-line{
-    font-size: clamp(2.4rem, 8vw, 3.8rem);
-    line-height: 1.2;
-  }
+
   .logo{
     width: min(320px, 74vw);
   }
@@ -327,4 +321,17 @@ html{
   .hero-title span{
     margin-top: 8px;
   }
+}
+
+.closing-title,
+.final-line{
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  color: var(--maroon);
+  margin: 10px 0 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
