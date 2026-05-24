@@ -70,16 +70,31 @@ div{
   content:"";
   position:absolute;
   inset:0;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.30),
+      rgba(255,255,255,.0.8) 45%,
+      rgba(255,238,235,.0.8)
+    );
+
+  pointer-events:none;
+}
+.page2::after{
 
   background:
     radial-gradient(
       circle at 50% 35%,
-      rgba(255,255,255,.72),
-      rgba(255,255,255,.16) 45%,
-      rgba(255,238,235,.12)
+      rgba(255,255,255,.12),
+      rgba(255,255,255,.04) 45%,
+      rgba(255,238,235,.02)
     );
-
-  pointer-events:none;
+}
+.page2{
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #f9dfe3;
 }
 
 .hero-card,
@@ -166,13 +181,13 @@ h2{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  line-height:2.3;
+  line-height:1.5;
 }
 
 .hero-title span{
   display:block !important;
   width:100%;
-  margin-top:5px;
+  margin-top:1px;
 }
 
 .hero-card h1{
