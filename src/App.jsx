@@ -1,9 +1,10 @@
-import React from 'react';
+
 import { createRoot } from 'react-dom/client';
 import { CalendarDays, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { invite } from './inviteConfig';
 import './styles.css';
-import { useState } from 'react';
+import React, { useState, useRef } from 'react';
+
 
 function Detail({icon, label, href}){
   return <a className="detail glow-link" href={href} target={href?.startsWith('http')?'_blank':undefined} rel="noreferrer">
@@ -22,13 +23,29 @@ function App(){
     accommodation: 'No',
     accommodationGuests: 0
   });
+  const audioRef = useRef(null);
+
+const [playing, setPlaying] = useState(false);
+
+const toggleMusic = () => {
+
+  if (!audioRef.current) return;
+
+  if (playing) {
+    audioRef.current.pause();
+  } else {
+    audioRef.current.play();
+  }
+
+  setPlaying(!playing);
+};
   const handleSubmit = async (e) => {
 
     e.preventDefault();
   
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbycbkCflZLQwP7bWOPCzXNUUEin05qh9FKV4rmd6kyDQGkgDp4WeuPqRMUb0PAvaBa-iA/exec',
+        'https://script.google.com/macros/s/AKfycbz4V3mzxBi2LPVgUpBRO-KBhoBv9bG1RtM4K6BWceehc0DKOsddL_vvYojwqxNw07HkhA/exec',
         {
           method: 'POST',
           mode: 'no-cors',
@@ -107,8 +124,11 @@ function App(){
       
       </div>
       <div className="couple-wrap">
-        
-        <img src={invite.images.couple} alt="Illustration of Saloni and Shrenik" />
+        <img
+          src={invite.images.couple}
+          className="couple"
+          alt="Illustration of Saloni and Shrenik"
+        />
       </div>
     </div>
   </Page>
@@ -179,7 +199,6 @@ function App(){
 </form>
     
       </section>
-
       <section className="stack-card">
         <MapPin className="section-icon"/>
         <h3>Getting There</h3>
@@ -194,7 +213,6 @@ function App(){
             alt="Map preview"
           />
         </a>
-
         <a
           className="pill"
           href={invite.mapLink}
@@ -222,10 +240,27 @@ function App(){
       </section>
 
       <p className="final-line">{invite.closing}</p>
-
+      
     </div>
   </Page>
- </main>
-}
+ 
+    <audio
+      ref={audioRef}
+      loop
+    >
+    <source
+    src="/music/nazm-nazm.mp3"
+    type="audio/mpeg"
+    />
+    </audio>
 
+  <button
+    className="music-btn"
+    onClick={toggleMusic}
+  >
+    {playing ? '❚❚ Music' : '▶ Music'}
+   </button>
+
+</main> 
+}
 createRoot(document.getElementById('root')).render(<App />);
