@@ -121,17 +121,16 @@ const toggleMusic = () => {
           <Detail icon={<Clock/>} label={invite.timeLabel} href={invite.calendarLink}/>
           <Detail icon={<MapPin/>} label={invite.locationShort} href={invite.mapLink}/>
         </div>
+     
       </div>
-</div>
-      {/*</div>
-      <div className="couple-wrap">
+      {/*<div className="couple-wrap">
         <img
           src={invite.images.couple}
           className="couple"
           alt="Illustration of Saloni and Shrenik"
         />
-      </div>
-    </div> */}
+      </div>*/}
+    </div>
   </Page>
   <Page n={3}>
     <div className="page3-inner fade-up">
