@@ -3,6 +3,7 @@ import { CalendarDays, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { invite } from './inviteConfig';
 import './styles.css';
 import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 function Detail({icon, label, href}){
   return <a className="detail glow-link" href={href} target={href?.startsWith('http')?'_blank':undefined} rel="noreferrer">
@@ -24,6 +25,24 @@ function App(){
   const audioRef = useRef(null);
 
 const [playing, setPlaying] = useState(false);
+useEffect(() => {
+  const startMusic = async () => {
+    if (audioRef.current) {
+      try {
+        await audioRef.current.play();
+        setPlaying(true);
+      } catch (err) {
+        console.log('Autoplay blocked');
+      }
+    }
+    window.removeEventListener('click', startMusic);
+    window.removeEventListener('touchstart', startMusic);
+    window.removeEventListener('scroll', startMusic);
+  };
+  window.addEventListener('click', startMusic);
+  window.addEventListener('touchstart', startMusic);
+  window.addEventListener('scroll', startMusic);
+}, []);
 
 const toggleMusic = () => {
 
@@ -96,7 +115,7 @@ const toggleMusic = () => {
             <span>We would like to invite you</span>
             <span>to the engagement ceremony of</span>
             </p>
-        <div className="divider"><span></span>♥<span></span></div>
+        <div className="divider divider-page2"><span></span>♥<span></span></div>
         <h2>{invite.names}</h2>
         <div className="couple-section"></div>
        <div className="couple-grid">
@@ -250,9 +269,11 @@ const toggleMusic = () => {
     <audio
       ref={audioRef}
       loop
+      preload="auto"
+      playsInline
     >
     <source
-    src="/music/nazm-nazm.mp3"
+    src="/music/romantic-music.mp3"
     type="audio/mpeg"
     />
     </audio>
