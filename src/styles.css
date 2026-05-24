@@ -257,7 +257,10 @@ html{
     font-size: clamp(2.8rem, 9vw, 4rem);
     line-height: 1.1;
   }
-  .subtitle,
+  .subtitle{
+    font-size:clamp(2.8rem, 9vw, 4rem);
+    line-height: 1.1;
+  }
   .eyebrow,
   .airport,
   .gift-line{
