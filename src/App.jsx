@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { CalendarDays, Clock, MapPin, Phone, Mail } from 'lucide-react';
 import { invite } from './inviteConfig';
 import './styles.css';
-import React, { useState, useRef } from 'react';
+{/*import React, { useState, useRef } from 'react';*/}
 import React, { useState, useRef, useEffect } from 'react';
 
 function Detail({icon, label, href}){
