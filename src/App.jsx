@@ -95,31 +95,37 @@ const toggleMusic = () => {
  return <main>
 <Page n={1}>
   <div className="hero-card fade-up">
+    <Page n={1}>
+  <div className="hero-card fade-up">
 
-    {/* PAGE 1 LOGO */}
-    {/* 
+    {/*
     <img
       src={invite.images.logo}
       className="logo static-logo"
       alt="Logo"
     />
     */}
-
-    {/* PAGE 1 TITLE 
+    {/*
     <h1 className="hero-title">
       Saloni & Shrenik's
       <span>Engagement Ceremony</span>
     </h1>
-
-    {/* PAGE 1 DIVID
+    */}
+    {/*
     <div className="divider">
       <span></span>♥<span></span>
     </div>
-
-    {/* PAGE 1 SUBTITLE 
+    */}
+    {/*
     <p className="subtitle">
       {invite.subtitle}
-    </p>*/}
+    </p>
+    */}
+    <div className="scroll-note">
+      Scroll to open
+    </div>
+  </div>
+</Page>
 
     {/* KEEP SCROLL BUTTON */}
     <div className="scroll-note">
