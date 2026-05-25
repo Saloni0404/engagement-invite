@@ -290,7 +290,7 @@ const toggleMusic = () => {
       <Detail
       icon={<Youtube/>}
       label="Watch Live on YouTube"
-      href="https://youtube.com/"
+      href="https://youtube.com/live/bO4-3baMvlU?feature=share"
       />
 
     </div>
