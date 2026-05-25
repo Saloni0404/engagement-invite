@@ -95,9 +95,7 @@ const toggleMusic = () => {
  return <main>
 <Page n={1}>
   <div className="hero-card fade-up">
-    <Page n={1}>
-  <div className="hero-card fade-up">
-
+  
     {/*
     <img
       src={invite.images.logo}
@@ -124,14 +122,6 @@ const toggleMusic = () => {
     <div className="scroll-note">
       Scroll to open
     </div>
-  </div>
-</Page>
-
-    {/* KEEP SCROLL BUTTON */}
-    <div className="scroll-note">
-      Scroll to open
-    </div>
-
   </div>
 </Page>
 
