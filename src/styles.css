@@ -100,7 +100,7 @@ div{
   border-bottom:none;
 }
 
-.hero-card,
+/*.hero-card,*/
 .invite-layout,
 .page3-inner{
   position:relative;
@@ -157,10 +157,9 @@ h2{
 .hero-card{
   position:relative;
   text-align:center;
-  margin-top:25vh;
-  transform:translateY(-50%);
   padding:36px 20px;
   width:100%;
+  min-height:100svh;
 }
 
 .hero-title{
