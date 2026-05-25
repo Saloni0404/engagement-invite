@@ -47,23 +47,6 @@ div{
    SHARED LAYOUT
 ====================================================== */
 
-.page{
-  min-height:100svh;
-  width:100%;
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:
-    clamp(24px,4vw,54px)
-    clamp(16px,5vw,80px);
-  position:relative;
-  overflow:clip;
-  border-bottom:
-    2px solid rgba(201,154,55,.45);
-}
 .page::before{
   content:"";
   position:absolute;
@@ -81,47 +64,45 @@ div{
     );
   z-index:5;
 }
+.page{
+  /*min-height:100svh; */ 
+  min-height:min(760px,90svh);
+  width:100%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:
+    clamp(20px,3vw,38px);
+  overflow:clip;
+  background:#f7e7e4;
+  border-bottom:
+    2px solid rgba(201,154,55,.42);
+}
 .page::after{
   content:"";
   position:absolute;
-  inset:0;
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(255,255,255,.12),
-      rgba(255,255,255,.04) 45%,
-      rgba(255,238,235,.04)
-    );
-  pointer-events:none;
+  inset:clamp(10px,2vw,22px);
+  background-image:inherit;
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:
+    2px solid rgba(201,154,55,.55);
+  border-radius:clamp(12px,2vw,22px);
+  box-shadow:
+    0 10px 28px rgba(123,31,45,.10);
+  z-index:0;
 }
 .page2{
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
 }
-.page2::after{
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(255,255,255,.12),
-      rgba(255,255,255,.04) 45%,
-      rgba(255,238,235,.02)
-    );
-}
 .page3::before,
 .page3{
   border-bottom:none;
 }
-.page3::after{
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      rgba(255,255,255,.12),
-      rgba(255,255,255,.04) 45%,
-      rgba(255,238,235,.02)
-    );
-}
-
 
 .hero-card,
 .invite-layout,
@@ -145,15 +126,12 @@ h2{
   margin:18px 0;
   color:var(--maroon);
 }
-
 h1{
   font-size:clamp(2.1rem,6vw,4.5rem);
 }
-
 h2{
   font-size:clamp(3rem,6.8vw,6.3rem);
 }
-
 .divider{
   display:flex;
   align-items:center;
@@ -189,20 +167,6 @@ h2{
   width:100%;
 }
 
-/*.logo{
-  width:min(330px,58vw);
-  height:auto;
-
-  filter:
-    drop-shadow(
-      0 12px 18px rgba(123,31,45,.12)
-    );
-}*/
-
-/*.static-logo{
-  animation:none !important;
-}
-*/
 .hero-title{
   display:flex;
   flex-direction:column;
@@ -236,7 +200,7 @@ h2{
 .scroll-note{
 
   position:absolute;
-  top:90%;
+  top:120%;
   left:40%;
   transform:translateX(-50%);
   color:var(--maroon);
@@ -257,7 +221,8 @@ h2{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  min-height:100svh;
+  /*min-height:100svh;*/
+  min-height:min(760px,90svh);
   gap:18px;
 }
 
@@ -293,7 +258,7 @@ h2{
 .eyebrow span{
   display:block;
 }
-.couple-grid{
+/*.couple-grid{
   display:flex;
   flex-direction:row;
   justify-content:center;
@@ -303,7 +268,7 @@ h2{
   margin-top:18px;
   margin-bottom:0;
 }
-
+*/
 .couple-ampersand{
   font-family:'Great Vibes',cursive;
   font-size:clamp(3rem,6vw,5rem);
@@ -329,7 +294,7 @@ h2{
       90deg,
       transparent,
       var(--gold),
-      transparents
+      transparent
     );
 }
 
@@ -404,7 +369,7 @@ h2{
   padding-left:18px;
   justify-content:center;
   gap:4px;
-  min-height:72px;
+  min-height:min(760px,90svh);
   transition:.25s;
 }
 
@@ -537,8 +502,7 @@ h2{
    RSVP FORM
 ====================================================== */
 .rsvp-card{
-
-  min-height:760px;
+ min-height:min(760px,90svh);
   padding-top:34px;
   padding-bottom:34px;
 }
@@ -714,21 +678,19 @@ h2{
   html{
     font-size:18px;
   }
-  .page{
-    padding:28px 20px;
-  }
-  h1{
+
+ /* h1{
     font-size:
       clamp(3.2rem,10vw,4.8rem);
     line-height:1.08;
     letter-spacing:.02em;
-  }
-  h2{
+  }*/
+  /*h2{
     font-size:
       clamp(2.8rem,9vw,4rem);
 
     line-height:1.1;
-  }
+  }*/
   .eyebrow,
   .airport,
   .gift-line{
@@ -794,19 +756,18 @@ h2{
   gap:12px;
   width:100%;
 }
-.eyebrow{
+/*.eyebrow{
   font-size:clamp(2rem,8vw,3.2rem);
   line-height:1.3;
 }
+  */
 .details-row{
   top:58%;
   left:6%;
   width:58%;
   gap:10px;
 }
-.rsvp-card{
-  min-height:820px;
-}
+
 }
 @media (min-width:1600px){
   .page{
@@ -814,11 +775,5 @@ h2{
   }
   .invite-layout{
     gap:80px;
-  }
-  h1{
-    font-size:6rem;
-  }
-  h2{
-    font-size:5.8rem;
   }
 }
